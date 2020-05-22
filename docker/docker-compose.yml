@@ -68,12 +68,28 @@ services:
                 -Didentity-service.resource=alfresco
                 -Didentity-service.public-client=true
                 -Didentity-service.ssl-required=none
-                
+
+                -Dcors.enabled=true
+                -Dcors.allowed.origins=*
+                -Dcors.allowed.methods=DELETE,GET,HEAD,OPTIONS,POST,PUT
+                -Dcors.allowed.headers=Accept,Access-Control-Request-Headers,Access-Control-Request-Method,Authorization,Cache-Control,Content-Type,Origin,X-CSRF-Token,X-Requested-With
+                -Dcors.exposed.headers=Accept-Ranges,Content-Encoding,Content-Length,Content-Range
+                -Dcors.support.credentials=false
+                -Dcors.preflight.maxage=10
+  
                 -Xms1500m -Xmx1500m
                 "
 
         ports:
             - 8080:8080
+              #        volumes:
+                #            - type: "bind"
+                #              source: ./web.xml
+                #              target: /usr/local/tomcat/webapps/alfresco/WEB-INF/web.xml
+              #            - type: "bind"
+              #              source: ./alfresco-global.properties
+              #              target: /usr/local/tomcat/shared/classes/alfresco-global.properties
+              
 
               #    share:
               #        image: alfresco/alfresco-share:6.2.1
@@ -115,6 +131,10 @@ services:
             - "SOLR_JAVA_MEM=-Xms2g -Xmx2g"
         ports:
             - 8083:8983 #Browser port
+    adf-auth:
+        image: adf-auth:0.1
+        ports:
+            - 80:80
 
 volumes:
     keycloak-db-data:
