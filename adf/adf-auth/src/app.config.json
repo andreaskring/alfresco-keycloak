@@ -1,0 +1,66 @@
+{
+    "$schema": "../node_modules/@alfresco/adf-core/app.config.schema.json",
+    "ecmHost": "http://alfresco:8080",
+    "providers" : "ECM",
+    "application": {
+        "name": "Alfresco ADF Application"
+    },
+    "authType": "OAUTH",
+    "oauth2": {
+        "host": "http://keycloak:8180/auth/realms/alfresco",
+        "clientId": "alfresco",
+        "secret": "",
+        "scope": "openid",
+        "implicitFlow": true,
+        "silentLogin": true,
+        "redirectUri": "/",
+        "redirectUriLogout": "/logout"
+    },
+    "languages": [
+        {
+            "key": "en",
+            "label": "English"
+        },
+        {
+            "key": "fr",
+            "label": "French"
+        },
+        {
+            "key": "de",
+            "label": "German"
+        },
+        {
+            "key": "it",
+            "label": "Italian"
+        },
+        {
+            "key": "es",
+            "label": "Spanish"
+        },
+        {
+            "key": "ja",
+            "label": "Japanese"
+        },
+        {
+            "key": "nl",
+            "label": "Dutch"
+        },
+        {
+            "key": "pt-BR",
+            "label": "Brazilian Portuguese"
+        },
+        {
+            "key": "nb",
+            "label": "Norwegian"
+        },
+        {
+            "key": "ru",
+            "label": "Russian"
+        },
+        {
+            "key": "zh-CN",
+            "label": "Simplified Chinese"
+        }
+    ],
+    "logLevel" : "trace"
+}
