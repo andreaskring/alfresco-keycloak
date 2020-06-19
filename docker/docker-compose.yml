@@ -13,6 +13,18 @@ services:
             - type: "volume"
               source: keycloak-db-data
               target: /var/lib/postgresql/data
+    postgres-idp:
+        image: postgres
+        ports:
+            - 5430:5432
+        environment:
+            POSTGRES_DB: keycloak
+            POSTGRES_USER: keycloak
+            POSTGRES_PASSWORD: keycloak
+        volumes:
+            - type: "volume"
+              source: idp-db-data
+              target: /var/lib/postgresql/data
     keycloak:
         image: quay.io/keycloak/keycloak
         command: ["-Djboss.socket.binding.port-offset=100", "-Dkeycloak.migration.strategy=IGNORE_EXISTING"]
@@ -24,12 +36,35 @@ services:
             DB_USER: keycloak
             DB_PASSWORD: keycloak
             DB_ADDR: postgres-keycloak
+        depends_on:
+            - postgres-keycloak
         volumes:
             - type: "volume"
               source: keycloak-data
               target: /opt/jboss/keycloak/standalone/data
+    idp:
+        image: quay.io/keycloak/keycloak
+        command: ["-Djboss.socket.binding.port-offset=200", "-Dkeycloak.migration.strategy=IGNORE_EXISTING"]
+        ports:
+            - 8280:8280
+        environment:
+            KEYCLOAK_USER: admin
+            KEYCLOAK_PASSWORD: admin
+            DB_USER: keycloak
+            DB_PASSWORD: keycloak
+            DB_ADDR: postgres-idp
+        depends_on:
+            - postgres-idp
+        volumes:
+            - type: "volume"
+              source: idp-data
+              target: /opt/jboss/keycloak/standalone/data
+        
     alfresco:
         image: alfresco/alfresco-content-repository-community:6.2.1-A8
+        depends_on:
+            - keycloak
+            - postgres
         environment:
             JAVA_OPTS: "
                 -Ddb.driver=org.postgresql.Driver
@@ -139,3 +174,5 @@ services:
 volumes:
     keycloak-db-data:
     keycloak-data:
+    idp-db-data:
+    idp-data:
