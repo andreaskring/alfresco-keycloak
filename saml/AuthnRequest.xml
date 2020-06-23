@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<samlp:AuthnRequest 
+    xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol" 
+    xmlns="urn:oasis:names:tc:SAML:2.0:assertion" 
+    AssertionConsumerServiceURL="http://keycloak:8180/auth/realms/alfresco/broker/saml/endpoint" 
+    Destination="http://idp:8280/auth/realms/idp/protocol/saml" 
+    ForceAuthn="false" 
+    ID="ID_8a7db450-46a6-4ebc-b80a-c5083a982948" 
+    IsPassive="false" 
+    IssueInstant="2020-06-23T10:36:09.416Z" 
+    ProtocolBinding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" 
+    Version="2.0">
+  <saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">http://keycloak:8180/auth/realms/alfresco</saml:Issuer>
+  <samlp:NameIDPolicy AllowCreate="true" Format="urn:oasis:names:tc:SAML:2.0:nameid-format:persistent"/>
+</samlp:AuthnRequest>
