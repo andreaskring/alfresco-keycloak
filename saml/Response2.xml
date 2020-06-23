@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<samlp:Response xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" Destination="http://keycloak:8180/auth/realms/alfresco/broker/saml/endpoint" ID="ID_4af5f938-d66a-4f47-9aa8-102e7a28b9e2" InResponseTo="ID_6fbc4735-c186-4ced-ad8f-0b40179de9bf" IssueInstant="2020-06-23T13:20:45.185Z" Version="2.0">
+  <saml:Issuer>http://idp:8280/auth/realms/idp</saml:Issuer>
+  <dsig:Signature xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">
+    <dsig:SignedInfo>
+      <dsig:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+      <dsig:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+      <dsig:Reference URI="#ID_4af5f938-d66a-4f47-9aa8-102e7a28b9e2">
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+          <dsig:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+        <dsig:DigestValue>T74RDEcNd10TL6VgmB44ppYUdeqhvCqQThPfHEBRWYE=</dsig:DigestValue>
+      </dsig:Reference>
+    </dsig:SignedInfo>
+    <dsig:SignatureValue>lFgOn76QxnoORLAWxsLnmIvkEnBDCn62z0Z4oAKXxvPbyetX2QgXMhsjqLNhbF+dLToHL/VzhDqbcAF2bSHex1ekN4CMGn/lyO5ffREu25gOXId3yvvk/yAB4VwKCoO4Shmpbx1RI1ZXSEZa2928LmnEzd9LbWsBp7saqZuL173LvzmhoFy+b/Cs/HYsHP14Qqu2bL4siJZqn/PeK7/DyNv4LHz9K7LFxdlE97sSLbSpJoJvxqx8C7Dh/o1ILse3tC96CFSdlLvWIJD+MH+KjJ4HmLzmsepnfOzV78yYZq6ktMugo3VB0iJd2Ox21IKOxNKYc3T60es23fFR6E9dQw==</dsig:SignatureValue>
+    <dsig:KeyInfo>
+      <dsig:KeyName>3DX_O9bxhKQlzsIINn5ia4Dg7wmbaCA0ea6gbRGPGfg</dsig:KeyName>
+      <dsig:X509Data>
+        <dsig:X509Certificate>MIIClTCCAX0CBgFyx8H0DjANBgkqhkiG9w0BAQsFADAOMQwwCgYDVQQDDANpZHAwHhcNMjAwNjE4MTQwNjE2WhcNMzAwNjE4MTQwNzU2WjAOMQwwCgYDVQQDDANpZHAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDBUuCYNxf3DWuqwjYdNUBCKn1qaRB9bsrgfE4S3Z2x45dkkSBjISIltt7MnDjsVjXPiH7FglGAhWOUVWXpDIahszbBvJ7CO68NWYFf8fJ5lG93okw6xSLLj25/RMvRfx9ZtBb7L/zEYHa6VHN1/Y8+iQ3BXUHOLeW+HLzE9y/ju7OZQ12x6O1GF01SsPb3ijNBuUfjvonT9p109sJ1L5huLtFm+2dZAF1EIL+4krFvuxFP1GtLlcVNac6sNveacmwdRAANi6YKJe/9hjSiVgyfydFpCHwbZaEaSdxH/1WSFfKrRnyK8dQKFC7NnLNI7Aa8vARnkzg/uKnUjT2vU1fRAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAHTbjk+7FyQxLiN6eNsBJ7C+RCIqNKsN76uMScy6cK0QzxjNERWDSgMjr8NdIO51m64laekDQjnBSWHGRhhjE7JaTn5PbO4sz/nNfyI9o4bR4KPLD+1uEuGg112N8UeIvGqrJ/60T2Py/FWNolreLtlbWESfRXCjH/EL3CSktfoofixmMIdDLjobVSbyn+Xh5ObMro8+np0Ou9f+SHPNNZE5YFFpvz/CP8rpCj8Gf1vbz3Gn7uaOeEMnpNMqtDu5Mc2CRa2iE6P36zWdMI8PDuW2RJRsN5AkLhIO+X91cejBfwSFxrtfT+uQOkRb9NbDsrb0Wi3DZxaFvPFqbM1GOGw=</dsig:X509Certificate>
+      </dsig:X509Data>
+      <dsig:KeyValue>
+        <dsig:RSAKeyValue>
+          <dsig:Modulus>wVLgmDcX9w1rqsI2HTVAQip9amkQfW7K4HxOEt2dseOXZJEgYyEiJbbezJw47FY1z4h+xYJRgIVjlFVl6QyGobM2wbyewjuvDVmBX/HyeZRvd6JMOsUiy49uf0TL0X8fWbQW+y/8xGB2ulRzdf2PPokNwV1Bzi3lvhy8xPcv47uzmUNdsejtRhdNUrD294ozQblH476J0/addPbCdS+Ybi7RZvtnWQBdRCC/uJKxb7sRT9RrS5XFTWnOrDb3mnJsHUQADYumCiXv/YY0olYMn8nRaQh8G2WhGkncR/9VkhXyq0Z8ivHUChQuzZyzSOwGvLwEZ5M4P7ip1I09r1NX0Q==</dsig:Modulus>
+          <dsig:Exponent>AQAB</dsig:Exponent>
+        </dsig:RSAKeyValue>
+      </dsig:KeyValue>
+    </dsig:KeyInfo>
+  </dsig:Signature>
+  <samlp:Status>
+    <samlp:StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:Success"/>
+  </samlp:Status>
+  <saml:Assertion xmlns="urn:oasis:names:tc:SAML:2.0:assertion" ID="ID_2f1eb627-9a32-4bf2-a96e-d5c9d851ec8b" IssueInstant="2020-06-23T13:20:45.185Z" Version="2.0">
+    <saml:Issuer>http://idp:8280/auth/realms/idp</saml:Issuer>
+    <saml:Subject>
+      <saml:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress">chuck@karate.org</saml:NameID>
+      <saml:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
+        <saml:SubjectConfirmationData InResponseTo="ID_6fbc4735-c186-4ced-ad8f-0b40179de9bf" NotOnOrAfter="2020-06-23T13:25:43.185Z" Recipient="http://keycloak:8180/auth/realms/alfresco/broker/saml/endpoint"/>
+      </saml:SubjectConfirmation>
+    </saml:Subject>
+    <saml:Conditions NotBefore="2020-06-23T13:20:43.185Z" NotOnOrAfter="2020-06-23T13:21:43.185Z">
+      <saml:AudienceRestriction>
+        <saml:Audience>http://keycloak:8180/auth/realms/alfresco</saml:Audience>
+      </saml:AudienceRestriction>
+    </saml:Conditions>
+    <saml:AuthnStatement AuthnInstant="2020-06-23T13:20:45.185Z" SessionIndex="d035e4b5-5dfb-4d37-8a0f-9b1b9f8bf5fc::ccdb64a6-3cb8-44c4-b471-030af92b65a2" SessionNotOnOrAfter="2020-06-23T23:20:45.185Z">
+      <saml:AuthnContext>
+        <saml:AuthnContextClassRef>urn:oasis:names:tc:SAML:2.0:ac:classes:unspecified</saml:AuthnContextClassRef>
+      </saml:AuthnContext>
+    </saml:AuthnStatement>
+    <saml:AttributeStatement>
+      <saml:Attribute Name="Role" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic">
+        <saml:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">offline_access</saml:AttributeValue>
+      </saml:Attribute>
+      <saml:Attribute Name="Role" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic">
+        <saml:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">uma_authorization</saml:AttributeValue>
+      </saml:Attribute>
+      <saml:Attribute Name="Role" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic">
+        <saml:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">manage-account</saml:AttributeValue>
+      </saml:Attribute>
+      <saml:Attribute Name="Role" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic">
+        <saml:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">manage-account-links</saml:AttributeValue>
+      </saml:Attribute>
+      <saml:Attribute Name="Role" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic">
+        <saml:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">view-profile</saml:AttributeValue>
+      </saml:Attribute>
+    </saml:AttributeStatement>
+  </saml:Assertion>
+</samlp:Response>
