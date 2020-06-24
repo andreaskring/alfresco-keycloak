@@ -25,6 +25,14 @@ services:
             - type: "volume"
               source: idp-db-data
               target: /var/lib/postgresql/data
+              #    postgres-k2:
+              #        image: postgres
+              #        ports:
+              #            - 5429:5432
+              #        environment:
+              #            POSTGRES_DB: keycloak
+              #            POSTGRES_USER: keycloak
+              #            POSTGRES_PASSWORD: keycloak
     keycloak:
         depends_on:
             - postgres-keycloak
@@ -61,6 +69,17 @@ services:
             - type: "volume"
               source: idp-data
               target: /opt/jboss/keycloak/standalone/data
+              #    k2:
+              #        image: quay.io/keycloak/keycloak
+              #        command: ["-Djboss.socket.binding.port-offset=300", "-Dkeycloak.migration.strategy=IGNORE_EXISTING"]
+              #        ports:
+              #            - 8380:8380
+              #        environment:
+              #            KEYCLOAK_USER: admin
+              #            KEYCLOAK_PASSWORD: admin
+              #            DB_USER: keycloak
+              #            DB_PASSWORD: keycloak
+              #            DB_ADDR: postgres-k2
         
     alfresco:
         depends_on:
