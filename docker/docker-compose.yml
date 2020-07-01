@@ -194,7 +194,11 @@ services:
         image: adf-auth:0.1
         ports:
             - 80:80
-
+    openldap:
+        image: osixia/openldap:1.4.0
+        ports:
+            - 389:389
+            - 636:636
 volumes:
     keycloak-db-data:
     keycloak-data:

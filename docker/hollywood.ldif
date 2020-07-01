@@ -1,0 +1,95 @@
+version: 1
+
+dn: ou=people,dc=example,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: people
+
+dn: uid=bruce,ou=people,dc=example,dc=org
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: Bruce Lee
+sn: Lee
+departmentNumber: CSR
+mail: bruce@kung.fu
+uid: bruce
+userPassword:: YnJ1Y2U=
+
+dn: ou=groups,dc=example,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: groups
+
+dn: ou=csr,ou=groups,dc=example,dc=org
+objectClass: groupOfUniqueNames
+objectClass: top
+cn: CSR
+uniqueMember: uid=bruce,ou=people,dc=example,dc=org
+uniqueMember: uid=clint,ou=people,dc=example,dc=org
+ou: csr
+
+dn: uid=clint,ou=people,dc=example,dc=org
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Clint Eastwood
+sn: Eastwood
+departmentNumber: CSR
+mail: clint@hollywood.com
+uid: clint
+userPassword:: Y2xpbnQ=
+
+dn: uid=chuck,ou=people,dc=example,dc=org
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: Chuck Norris
+sn: Norris
+departmentNumber: HR
+mail: chuck@karate.org
+uid: chuck
+userPassword:: Y2h1Y2s=
+
+dn: uid=sylvester,ou=people,dc=example,dc=org
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: Sylvester Stallone
+sn: Rambo Stallone
+departmentNumber: IT
+mail: sylvester@hollywood.com
+uid: sylvester
+userPassword:: c3lsdmVzdGVy
+
+dn: ou=it,ou=groups,dc=example,dc=org
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: IT
+uniqueMember: uid=sylvester,ou=people,dc=example,dc=org
+ou: it
+
+dn: uid=britney,ou=people,dc=example,dc=org
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Britney Spears
+sn: Spears
+departmentNumber: IT
+mail: britney@hollywood.com
+uid: britney
+userPassword:: YnJpdG5leQ==
+
+dn: ou=hr,ou=groups,dc=example,dc=org
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: HR
+uniqueMember: uid=britney,ou=people,dc=example,dc=org
+ou: hr
+
+
