@@ -1,7 +1,8 @@
+import json
 import requests
 
 REALM = 'hurra'
-CLIENT_SECRET = '1db29fac-072b-4151-a916-2955780bf2ed'
+CLIENT_SECRET = '58332228-267c-4c17-9801-265c16b26a96'
 
 # NOT the same as client-id (Keycloak thing...)
 # E.g.
@@ -29,13 +30,20 @@ headers = {
     'Authorization': f'bearer {token}'
 }
 
+# Get list of clients
+
+CLIENTS_URL = f'http://localhost:8180/auth/admin/realms/{REALM}/clients'
+r = requests.get(CLIENTS_URL, headers=headers)
+print(r.status_code, r.url)
+print(json.dumps(r.json(), indent=2))
+
 # Disable client
 
 payload = {
     'enabled': False
 }
 
-CLIENT_URL = f'http://localhost:8180/auth/admin/realms/{REALM}' \
-             f'/clients/{CUSTOM_ID_CLIENT}'
-r = requests.put(CLIENT_URL, json=payload, headers=headers)
+CUSTOM_CLIENT_URL = f'http://localhost:8180/auth/admin/realms/{REALM}' \
+                    f'/clients/{CUSTOM_ID_CLIENT}'
+r = requests.put(CUSTOM_CLIENT_URL, json=payload, headers=headers)
 print(r.status_code, r.url)
